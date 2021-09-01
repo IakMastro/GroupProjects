@@ -4,7 +4,6 @@ This is a full stack app that keeps track of a user activities and projects.
 
 ## Front end
 
-
 Front end must have:
 
 * Login/Sign up page for the users. It should redirect here if no user is logged in.
@@ -20,7 +19,7 @@ It would be nice to have:
 * A page that shows other users' activities
 * A friend system, with a chat
 
-Front end can be implemented in either Angular, Vue or React, if done for a web application, otherwise in Android Studio if it's for mobile or Flutter or Electron for all the devices.
+Front end can be implemented in either Angular, Vue or React.
 
 ## Back end
 
@@ -37,3 +36,67 @@ It would be nice to have:
 * Deployed on a server in the Cloud. It could be deployed either with Docker Swarm, Nomad or Kubernetes.
 
 Back end can be implemented in either Python, NodeJS, Golang, PHP or dotnet environment.
+
+## Database Design
+
+![Database schema](01_database.png)
+
+The NoSQL Users must look like:
+
+```json
+{
+  [
+    {
+      _id: '132',
+      name: 'foo',
+      surname: 'bar',
+      friends: [
+        _id: '345',
+        _id: '678'
+      ]
+      activities: [
+        {
+          activity_name: 'code lol',
+          hidden: false
+        },
+        {
+          activity_name: 'go to buy PS5 on media markt',
+          hidden: true
+        }
+      }
+    }
+  ]
+}
+```
+
+The equivalent SQL user looks like:
+
+```text
+|  id  |    email     |  username |   password  |
+| 123  |  foo@bar.com |   foobar  |   @dga;b3rf |
+```
+
+The password must be a secret.
+
+## Idea by 💡
+
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+    <tr>
+        <td align="center">
+            <img src="https://avatars.githubusercontent.com/u/56538892?v=4" width="100px"> <br>
+            <b>Andrei Rusu</b><br>
+            <a href="https://github.com/UsurAndrei">Github/UsurAndrei</a><br>
+            Main idea
+        </td>
+          <td align="center">
+            <img src="https://avatars.githubusercontent.com/u/27853170?s=400&u=bac4716f23359d04027dbdb512b7308cc4f2ccd7&v=4" width="100px"> <br>
+            <b>Iakovos Mastrogiannopoulos</b><br>
+            <a href="https://github.com/IakMastro">Github/IakMastro</a><br>
+            Documentation/planner
+        </td>
+    </tr>
+</table>
+<!-- markdownlint-enable -->
+<!-- prettier-ignore-end -->
